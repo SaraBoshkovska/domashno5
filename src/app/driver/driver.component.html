@@ -1,0 +1,16 @@
+<div [ngClass] = "klasi()" [ngStyle]="stajling()">
+    <div class="course-title">{{reden + '. ' + igrac.name}}</div>
+    <ng-template #noImg><p>NEMA SLIKA</p></ng-template>
+    <img [src] = "igrac.iconUrl" *ngIf = "igrac.iconUrl; else noImg" width="30%" height="30%">
+    <div class="course-title" [ngStyle]="Cstajling()">{{igrac.country}}</div>
+    <div class="course-title" [ngStyle]="Pstajling()">{{igrac.points}}</div>
+    <div class="course-category" [ngSwitch] = "igrac.ranking" [ngStyle]="Rstajling()">
+        <div class="course-title" *ngSwitchCase = "1">GOAT</div>
+        <div class="course-title" *ngSwitchCase = "2">Meh</div>
+        <div class="course-title" *ngSwitchCase = "3">Meh</div>
+        <div class="course-title" *ngSwitchCase = "4">Meh</div>
+    </div>
+  
+        
+    <button (click) = "klik()">Click me</button>
+</div>
